@@ -20,7 +20,6 @@ Sample Output:
 Reversed array: [5, 4, 3, 2, 1]
 */
 
-//Program to reverse an array
 
 import java.util.Arrays;
 
