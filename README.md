@@ -7,6 +7,9 @@ By exploring this repository, you will deepen your understanding of how data str
 
 So delve into our collection and embark on a journey of discovery and learning. Sharpen your problem-solving skills, gain insights into efficient coding practices, and strengthen your grasp on crucial concepts in the world of data structures and algorithms. Happy coding! :)
 
+⭐️  If you find my repository useful or if you like it, please consider giving it a star. Your support encourages me to continue working on it and improve its functionality. Thank you!
+⭐️
+
 # Instructions for Contributing to the Repository:
 
 1. Start by exploring the existing issues in the repository and identify an issue you are interested in or something you want to work on that is not already there.
