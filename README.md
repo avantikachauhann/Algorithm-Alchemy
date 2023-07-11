@@ -139,7 +139,6 @@ Sample Input:
 
 Sample Output:
 - Provide the expected output for the given input.
-
 '''
 
 def code_example():
