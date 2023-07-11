@@ -91,6 +91,67 @@ So delve into our collection and embark on a journey of discovery and learning. 
 
 17. Once approved, your code will be merged into the main repository. Congratulations on your contribution!
 
+# Code Formatting Guidelines
+
+**FOR CONTRIBUTION IN JAVA**
+
+```java
+/*
+Approach:
+- Explain the general approach or algorithm behind the code in brief.
+
+Time Complexity: O(n)
+- Explain the time complexity of the code.
+
+Space Complexity: O(1)
+- Explain the space complexity of the code.
+
+Sample Input:
+- Provide an example input.
+
+Sample Output:
+- Provide the expected output for the given input.
+
+*/
+
+public class CodeExample {
+    public static void main(String[] args) {
+        // Main function to test the code
+    }
+}
+```
+
+**FOR CONTRIBUTION IN PYTHON**
+
+```python
+'''
+Approach:
+- Explain the general approach or algorithm behind the code in brief.
+
+Time Complexity: O(n)
+- Explain the time complexity of the code.
+
+Space Complexity: O(1)
+- Explain the space complexity of the code.
+
+Sample Input:
+- Provide an example input.
+
+Sample Output:
+- Provide the expected output for the given input.
+
+'''
+
+def code_example():
+    # Function to implement the code logic
+    pass
+
+if __name__ == "__main__":
+    code_example()    # Call the function to test the code
+```
+
+Note: You should replace the comments with the actual explanation, complexities, sample input, output, and code logic as per your specific requirements.
+
 
 
 
