@@ -9,17 +9,27 @@ Approach
 
 
 This algorithm has a time complexity of O(n) since each element is swapped at most once."""
-def cyclic_sort():
-    nums = [3, 5, 2, 1, 4]  # Input array
+def cyclic_sort(nums):
     i = 0
     while i < len(nums):
-        correct_index = nums[i] - 1  # index where nums[i] should be placed
-        if nums[i] != nums[correct_index]:
-            nums[i], nums[correct_index] = nums[correct_index], nums[i]  # swap
+        # Check if the current element is in its correct position
+        if nums[i] != i + 1:
+            # Swap the current element with the element at its correct position
+            nums[nums[i] - 1], nums[i] = nums[i], nums[nums[i] - 1]
         else:
-            i += 1  # move to the next element if it is already in the correct position
+            i += 1
 
-    return nums
+def code_example():
+    # Example input
+    nums = [4, 3, 2, 1]
 
-sorted_arr = cyclic_sort()
-print(sorted_arr)  # Output: [1, 2, 3, 4, 5]
+    # Call the cyclic_sort function
+    cyclic_sort(nums)
+
+    # Print the sorted list
+    print(nums)
+
+if __name__ == "__main__":
+    code_example()
+
+ #output  [1, 2, 3, 4]
