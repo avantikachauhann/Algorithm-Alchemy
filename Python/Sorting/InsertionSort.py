@@ -4,8 +4,8 @@ Approach
 ∙ Compare the key with each element to the left of it and shift elements greater than the key to the right.
 ∙ Insert the key into its correct position in the sorted portion.
 
-Time Complexity: The time complexity remains the same as the previous implementation: O(n^2) in the worst and average cases, and O(n) in the best case.
-Space Complexity: The space complexity also remains the same: O(1).
+Time Complexity: The time complexity of the implementation: O(n^2) in the worst and average cases, and O(n) in the best case.
+Space Complexity: The space complexity : O(1).
 
 Sample Input: arr = [5, 2, 8, 12, 3]
 Sample Output: Sorted array: [2, 3, 5, 8, 12]
