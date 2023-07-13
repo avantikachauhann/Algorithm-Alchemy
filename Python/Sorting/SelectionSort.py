@@ -28,6 +28,7 @@ def selection_sort(arr):
 
 
 # Sample usage
-arr = [5, 2, 8, 12, 3]
-selection_sort(arr)
-print("Sorted array:", arr)
+if __name__ == "__main__":
+    arr = [5, 2, 8, 12, 3]
+    selection_sort(arr)
+    print("Sorted array:", arr)
