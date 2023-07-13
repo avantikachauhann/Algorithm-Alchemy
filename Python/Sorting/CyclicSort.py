@@ -6,10 +6,11 @@ Approach
 4. Repeat steps 2 and 3 until the current element is in its correct position.
 5. Move to the next element and repeat steps 2 to 4 until all elements are in their correct positions.
 
-
-
 This algorithm has a time complexity of O(n) since each element is swapped at most once.
-The space complexity of the code is O(1)"""
+
+The space complexity of the code is O(1)
+"""
+
 def cyclic_sort(nums):
     i = 0
     while i < len(nums):
