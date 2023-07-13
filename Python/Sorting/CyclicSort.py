@@ -8,7 +8,8 @@ Approach
 
 
 
-This algorithm has a time complexity of O(n) since each element is swapped at most once."""
+This algorithm has a time complexity of O(n) since each element is swapped at most once.
+The space complexity of the code is O(1)"""
 def cyclic_sort(nums):
     i = 0
     while i < len(nums):
