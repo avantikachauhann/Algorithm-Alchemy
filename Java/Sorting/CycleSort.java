@@ -21,7 +21,7 @@ Sample Output:
 Array after sorting: 11 12 22 25 34 64 90
 */
 
-public class CycleSortExample {
+public class CycleSort {
     public static void cycleSort(int[] nums) {
         int n = nums.length;
         for (int cycleStart = 0; cycleStart < n - 1; cycleStart++) {
