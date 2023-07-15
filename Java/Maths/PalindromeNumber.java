@@ -43,15 +43,19 @@ public class PalindromeNumber {
     }
     
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
         
         System.out.print("Enter a number: ");
         int number = scanner.nextInt();
         
-        if (isPalindrome(number)) {
+        if (isPalindrome(number)) 
+        {
             System.out.println(number + " is a palindrome number.");
-        } else {
+        } 
+        else 
+        {
             System.out.println(number + " is not a palindrome number.");
+        }
         }
     }
 }
