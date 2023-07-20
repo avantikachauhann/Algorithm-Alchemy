@@ -1,7 +1,9 @@
+import java.util.ArrayList;
+
 /*
 Approach:
-Adjacency matrix is a representation of directed graphs. It stores a 0 for a not existing edge
-and a 1 for an existing edge.
+Adjacency matrix is a representation of directed graphs. It stores a 0 for a non existing edge
+and a 1 for existing edges.
 On y-axe are the outgoing nodes and on x-axe are the incoming nodes. E.g.
 
 (0 1 0)     This matrix states, that an edge from node 1 to 2 exists.
@@ -13,7 +15,7 @@ Iterate through => θ(n^2)
 Find Connection => O(1)
 Is Matrix valid => O(n^2)
 
-Space Complexity: O(1)
+Space Complexity:
 The needed space is O(n^2)
 
 Sample Input:
@@ -25,39 +27,56 @@ Sample Input:
 */
 public class AdjacencyMatrix {
 
-    private int[][] matrix;
+    //All entries stored in a 2 dimensional array
+    private byte[][] matrix;
 
-    public AdjacencyMatrix(int[][] matrix){
-        assert matrix != null;
-
+    public AdjacencyMatrix(byte[][] matrix){
         this.matrix = matrix;
     }
 
-    public boolean existsEdge(int x, int y){
-        assert matrix.length > y && matrix[y].length > x;
-
-        return matrix[y][x] == 1;
+    public boolean existsEdge(int from, int to){
+        return matrix[from-1][to-1] == 1;
     }
 
     public boolean equals(AdjacencyMatrix other){
-        assert other != null;
-
         return this.toString().equals(other.toString());
     }
 
-    public int[][] getMatrix() {
+    public byte[][] getMatrix() {
         return matrix;
     }
 
-    public void setMatrix(int[][] matrix) {
-        assert matrix != null;
-
+    public void setMatrix(byte[][] matrix) {
         this.matrix = matrix;
     }
 
-    //TODO Pair of edges and vertices needed for simple return
-    public void toAdjacencyField(){
+    //Convert datatype to @Adjacencyfield.java
+    public Adjacencyfield toAdjacencyField(){
+        //Create the datatype
+        Adjacencyfield field = new Adjacencyfield();
 
+        //tmp list to store all vertices and edges
+        ArrayList<Integer> vertices = new ArrayList<>();
+        ArrayList<Integer> edges = new ArrayList<>();
+
+        //adjacencyfield starts with index 1
+        vertices.add(1);
+
+        //go through the matrix and store every existing edge
+        for(int y = 0; y < matrix.length; y++){
+            for(int x = 0; x < matrix[y].length; x++){
+                if(matrix[y][x] == 1)
+                    edges.add(x+1);
+            }
+            //Adding the first out edge for the next node
+            vertices.add(edges.size()+1);
+        }
+
+        //write back to arrays
+        field.setVertices(convertListToArray(vertices));
+        field.setEdges(convertListToArray(edges));
+
+        return field;
     }
 
     public String toString(){
@@ -72,6 +91,7 @@ public class AdjacencyMatrix {
         return tmp;
     }
 
+    //check all entries  = [0,1]
     public boolean valid(){
         for(int y = 0; y < matrix.length; y++) {
             for (int x = 0; x < matrix[y].length; x++) {
@@ -82,13 +102,23 @@ public class AdjacencyMatrix {
         return true;
     }
 
-    public static void main(String[]args){
-        int[][] matrix = {  {0,1,0,1},
-                            {1,0,1,1},
-                            {1,0,0,1},
-                            {1,1,1,0}};
+    private int[] convertListToArray(ArrayList<Integer> list){
+        final int[] tmp = new int[list.size()];
 
-        int[][] matrix2 = {{1, 1, 0, 1},
+        for(int i = 0; i < list.size(); i++){
+            tmp[i] = list.get(i);
+        }
+        return tmp;
+    }
+
+    public static void main(String[]args){
+        //byte for less storage usage
+        byte[][] matrix = {  {0,1,0,1},
+                {1,0,1,1},
+                {1,0,0,1},
+                {1,1,0,0}};
+
+        byte[][] matrix2 = {{1, 1, 0, 1},
                 {1,0,1,1},
                 {1,0,0,1},
                 {1,1,1,0}};
@@ -97,6 +127,10 @@ public class AdjacencyMatrix {
         AdjacencyMatrix adj2 = new AdjacencyMatrix(matrix2);
 
         System.out.println(adj.toString());
-        System.out.println(adj2.equals(adj));
+        System.out.println("Equals: " + adj2.equals(adj));
+        System.out.println("Exists an edge 1 -> 2: " +adj.existsEdge(1,2));
+        System.out.println("Entries valid: " +adj.valid());
+
+        System.out.println(adj.toAdjacencyField().toString());
     }
 }
