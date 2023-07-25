@@ -61,7 +61,7 @@ public class TreeSort {
     }
     //insertion of the element in binary tree search format
     //smaller elements go to the left subtree,and larger elements go to the right subtree.If an element is already present in the BST(duplicate value),
-    // it is usually placed in the right subtree.
+    //it is usually placed in the right subtree.
     public void insert(int value){
         root=insert(value,root);
     }
@@ -82,7 +82,7 @@ public class TreeSort {
         node.height = Math.max(height(node.left), height(node.right)) + 1;
         return node;
     }
-    //in-order traversal,the left subtree is explored first,then the current node,and finally,the right subtree.
+    //In an in-order traversal,the left subtree is explored first,then the current node,and finally,the right subtree.
     public void inOrder(){
         inOrder(root);
     }
@@ -97,7 +97,7 @@ public class TreeSort {
     }
 
     public static void main(String[] args){
-        // Sample input
+        //Sample input
         int arr[]={15,10,5,8,12,20};
         TreeSort sort=new TreeSort();
         sort.populate(arr);
