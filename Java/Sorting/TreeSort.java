@@ -1,17 +1,17 @@
 /*Approach:
 -Tree sort,also known as binary tree sort,is a sorting algorithm that builds a binary search tree from the elements to be sorted and then performs an in-order traversal on the tree to retrieve the elements in sorted order.
 -Define a private inner class Node to represent a node in the binary search tree with an integer value, height, left, and right references.
--Implement the height(Node node) method to calculate the height of a node, returning -1 for a null node.
+-Implement the height() method to calculate the height of a node, returning -1 for a null node.
 -Implement the isEmpty() method to check if the tree is empty (root is null).
--Implement the populate(int[] nums1) method to build the binary search tree by inserting each element from the input array using the insert method.
+-Implement the populate(int[] arr) method to build the binary search tree by inserting each element from the input array using the insert method.
 -Implement the insert(int value) method to insert a new integer value into the binary search tree recursively, updating the node heights for balancing.
 -Implement the inOrder() method to perform an in-order traversal and print the values of the nodes in ascending order.
 
 Note:The time complexity and space complexity of the Tree Sort approach depends on how the binary search tree looks like,which is determined by whether the tree is balanced or unbalanced.
 
 TimeComplexity:
-    -Best-case time complexity(when the tree is highly balanced):O(n logn)
-    -Average-case time complexity:O(n logn)
+    -Best-case time complexity(when the tree is highly balanced):O(n log n)
+    -Average-case time complexity:O(n log n)
     -Worst-case time complexity(when the tree be comes a linear chain):O(n^2)
 SpaceComplexity:
     -Best-case space complexity (balanced tree): O(log n)
@@ -54,9 +54,9 @@ public class TreeSort {
         return root == null;
     }
 
-    public void populate(int[] nums1){
-        for(int i=0;i< nums1.length;i++){
-            this.insert(nums1[i]);
+    public void populate(int[] arr){
+        for(int i=0;i< arr.length;i++){
+            this.insert(arr[i]);
         }
     }
     //insertion of the element in binary tree search format
@@ -98,9 +98,9 @@ public class TreeSort {
 
     public static void main(String[] args){
         // Sample input
-        int nums[]={15,10,5,8,12,20};
+        int arr[]={15,10,5,8,12,20};
         TreeSort sort=new TreeSort();
-        sort.populate(nums);
+        sort.populate(arr);
         sort.inOrder();
     }
 }
