@@ -1,4 +1,5 @@
 /*Approach:
+
 -Tree sort,also known as binary tree sort,is a sorting algorithm that builds a binary search tree from the elements to be sorted and then performs an in-order traversal on the tree to retrieve the elements in sorted order.
 -Define a private inner class Node to represent a node in the binary search tree with an integer value, height, left, and right references.
 -Implement the height() method to calculate the height of a node, returning -1 for a null node.
@@ -6,8 +7,6 @@
 -Implement the populate(int[] arr) method to build the binary search tree by inserting each element from the input array using the insert method.
 -Implement the insert(int value) method to insert a new integer value into the binary search tree recursively, updating the node heights for balancing.
 -Implement the inOrder() method to perform an in-order traversal and print the values of the nodes in ascending order.
-
-Note:The time complexity and space complexity of the Tree Sort approach depends on how the binary search tree looks like,which is determined by whether the tree is balanced or unbalanced.
 
 TimeComplexity:
     -Best-case time complexity(when the tree is highly balanced):O(n log n)
@@ -17,6 +16,8 @@ SpaceComplexity:
     -Best-case space complexity (balanced tree): O(log n)
     -Average-case space complexity: O(log n) to O(n) (depending on the balance)
     -Worst-case space complexity (unbalanced tree): O(n)
+
+Note:The time complexity and space complexity of the Tree Sort approach depends on how the binary search tree looks like,which is determined by whether the tree is balanced or unbalanced.
 
 SampleInput:
 Array before sorting: 15 10 5 8 12 20
