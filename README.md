@@ -74,7 +74,7 @@ So delve into our collection and embark on a journey of discovery and learning. 
 
     d. Choose your branch in the "compare" dropdown.
 
-    e. Provide a descriptive title and detailed description for your pull request.
+    e. Provide a descriptive title and detailed description for your pull request including the issue number.
 
     f. Click on the "Create Pull Request" button to submit your changes for review.
 
@@ -95,6 +95,36 @@ So delve into our collection and embark on a journey of discovery and learning. 
 17. Once approved, your code will be merged into the main repository. Congratulations on your contribution!
 
 # Code Formatting Guidelines
+
+**FOR CONTRIBUTION IN C++**
+
+```cpp
+/*
+Approach:
+- Explain the general approach or algorithm behind the code in brief.
+
+Time Complexity: O(n)
+- Explain the time complexity of the code.
+
+Space Complexity: O(1)
+- Explain the space complexity of the code.
+
+Sample Input:
+- Provide an example input.
+
+Sample Output:
+- Provide the expected output for the given input.
+
+*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Main function to test the code
+    return 0;
+}
+```
 
 **FOR CONTRIBUTION IN JAVA**
 
