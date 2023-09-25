@@ -29,6 +29,7 @@ Matrix Addition Result:
 [10, 10, 10]
 
 The output shows the element-wise addition of `matrix1` and `matrix2`.
+'''
 
 # Matrix Addition Function
 def matrix_addition(matrix1, matrix2):
