@@ -22,11 +22,18 @@ Approach:
 public class PalindromePermutation {
 
     public static void main(String[] args){
-        //Sample Input
-        String test="abba";
         PalindromePermutation p= new PalindromePermutation();
-        // Expected Output : abba, baab
-        System.out.print(p.findPalindromePermutation(test));
+
+        // Testing the PalindromePermutation Method
+        String inputString="abba";
+        List<String> palindromePermutationString= p.findPalindromePermutation(inputString);
+
+        System.out.println(inputString);
+        System.out.println(palindromePermutationString);
+
+        // Input String : abba
+        // Output String: abba, baab
+        
     }
 
     public static final int MAX_CHAR_COUNT=26;
