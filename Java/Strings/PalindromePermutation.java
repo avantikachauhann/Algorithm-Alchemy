@@ -5,7 +5,8 @@ import java.util.List;
 
 //Palindrome Permutation of a String in Java
 /*
-STEPS:
+
+Approach:
 1. Created a frequency Array of the String
 2. Validated the Frequency Array to check if any Palindrome from the given String can be Created or Not
 3. If above Step Return False, return the empty list else continue with Step 4
@@ -15,12 +16,16 @@ STEPS:
 7. Used the HashSet to create List of Palindrome String
 8. Sorted the List and return the List.
 9. Used main Method to show the calling of the method and demo the result
+10.Time Complexity -> O(N * N!)
+11. Space Complexity -> O(R – L)
  */
 public class PalindromePermutation {
 
     public static void main(String[] args){
-        String test="abbab";
+        //Sample Input
+        String test="abba";
         PalindromePermutation p= new PalindromePermutation();
+        // Expected Output : abba, baab
         System.out.print(p.findPalindromePermutation(test));
     }
 
