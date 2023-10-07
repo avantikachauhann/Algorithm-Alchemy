@@ -8,15 +8,15 @@
 #     c. Update n with the calculated sum.
 # If n eventually becomes 1, it's a happy number. If it enters a cycle and is encountered again, it's not a happy number.
 
-# Time Complexity:
+# Time Complexity: O(n)
 #     The time complexity of this algorithm depends on the number of iterations required to determine whether the number is happy or not. In the worst case, the algorithm will run until 'n' becomes 1 or until it enters a cycle. The number of iterations is not fixed and can vary from input to input, so the time complexity is not easily expressed in Big O notation.
 
-# Space Complexity:
+# Space Complexity: O(1)
 #     The space complexity is determined by the space used to store the seen set, which can contain at most all distinct numbers encountered during the process. In the worst case, this set could contain up to 81 distinct numbers (as the sum of the squares of digits of a number is at most 81 for a 3-digit number). Therefore, the space complexity can be considered O(1) for practical purposes, as the number of distinct numbers stored is limited. 
 
 # Sample Input and Output:
-# Enter a number to find if it is a Happy Number or Not: 19
-# 19 is a Happy number
+#   Enter a number to find if it is a Happy Number or Not: 19
+#   19 is a Happy number
 
 # Enter a number to find if it is a Happy Number or Not: 4
 # 4 is not a Happy number
