@@ -4,8 +4,8 @@ import java.util.HashSet;
 import java.util.List;
 
 //Palindrome Permutation of a String in Java
-/*
 
+/*
 Approach:
 1. Created a frequency Array of the String
 2. Validated the Frequency Array to check if any Palindrome from the given String can be Created or Not
@@ -16,9 +16,15 @@ Approach:
 7. Used the HashSet to create List of Palindrome String
 8. Sorted the List and return the List.
 9. Used main Method to show the calling of the method and demo the result
-10.Time Complexity -> O(N * N!)
-11. Space Complexity -> O(R – L)
- */
+
+Time Complexity -> O(N * N!)
+Space Complexity -> O(R – L)
+
+Sample Input and Output:
+Input String: abba
+Output String: abba, baab
+*/
+
 public class PalindromePermutation {
 
     public static void main(String[] args){
