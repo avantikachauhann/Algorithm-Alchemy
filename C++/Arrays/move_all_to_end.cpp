@@ -2,7 +2,6 @@
 // Algorithm:
 // Here I've used two pointers approach.
 // Steps:
-
 // Declare 2 pointers i and j.
 // Initialize i at 0 and j at 1.
 // Run the while loop until j is less than n (size of the array).
