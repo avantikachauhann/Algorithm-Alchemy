@@ -1,33 +1,37 @@
 // ------------>  Move all Zeros to the end of the array <-----------------
 // Algorithm:
-// First, using a loop, we will place the pointer j. If we don’t find any 0, we will not perform the following steps.
-// After that, we will point i to index j+1 and start moving the pointer using a loop.
-// While moving the pointer i, we will do the following:
-// If a[i] != 0 i.e. a[i] is a non-zero element: We will swap a[i] and a[j]. Now, the current j is pointing to the non-zero element a[i]. So, we will shift the pointer j by 1 so that it can again point to the first zero.
-// Finally, our array will be set in the right manner.
+// Here I've used two pointers approach.
+// Steps:
+
+// Declare 2 pointers i and j.
+// Initialize i at 0 and j at 1.
+// Run the while loop until j is less than n (size of the array).
+// Now use if-else statements to compare.
+// If the value at both i and j index is 0, move the j pointer by 1 position.
+// If the value at i is 0 and value at j index is not zero, swap both the values and move both the pointers by 1 position.
+// In else case, move both the pointers by 1 position.
+//                                                      TC ==> O(N), SC==> O(1)
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> moveZeros(int n, vector<int> a) {
-    int j = -1;
-    //place the pointer j:
-    for (int i = 0; i < n; i++) {
-        if (a[i] == 0) {
-            j = i;
-            break;
+void moveZeroes(vector<int>& nums) {
+        int n = nums.size();
+        int i = 0;
+        int j = 1;
+        while(j<n){
+            if(nums[i]==0 && nums[j]!=0){
+                swap(nums[i],nums[j]);
+                i++;
+                j++;
+            }
+            else if(nums[i]==0 && nums[j]==0){
+                j++;
+            }
+            else{
+                i++;
+                j++;
+            }
         }
     }
-    //no non-zero elements:
-    if (j == -1) return a;
-    //Move the pointers i and j
-    //and swap accordingly:
-    for (int i = j + 1; i < n; i++) {
-        if (a[i] != 0) {
-            swap(a[i], a[j]);
-            j++;
-        }
-    }
-    return a;
-}
 int main()
 {
     vector<int> arr = {1, 0, 2, 3, 2, 0, 0, 4, 5, 1};
