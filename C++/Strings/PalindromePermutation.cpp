@@ -6,6 +6,9 @@ Explanation:
 Time Complexity:
 - The time complexity of this algorithm is O(n), where n is the length of the input string.
 
+Space Complexity:
+The space complexity of the provided code is O(c), where c is the number of distinct characters (i.e., the size of the character set) in the input string.
+
 Sample Input:
 Input String: "tact coa"
 
