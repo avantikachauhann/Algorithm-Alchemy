@@ -42,3 +42,6 @@ int main()
     cout << '\n';
     return 0;
 }
+// SAMPLE INPUT AND OUTPUT
+// INPUT :  1 0 2 3 2 0 0 4 5 1
+// OUTPUT : 1 2 3 2 4 5 1 0 0 0
