@@ -1,68 +1,63 @@
-/*Bucket Sort is a sorting algorithm that divides an array into several "buckets," where each bucket represents a range of values. Elements from the input array are distributed into these buckets based on their values. Each bucket is sorted independently, and then the sorted buckets are concatenated to form the final sorted array. Here's a Java implementation of Bucket Sort along with an explanation and time complexity analysis:
+/*
+Approach:
+- Bucket Sort is a sorting algorithm that works by dividing the input into a number of buckets.
+- Each bucket is then sorted individually, either using a different sorting algorithm or by recursively applying the Bucket Sort algorithm.
+- The sorted elements from each bucket are concatenated to produce the final sorted array.
 
-Algorithm:
+Time Complexity: O(n^2) - In the worst case when all elements fall into a single bucket.
+                O(n + n^2/k + k) = O(n^2) where n is the number of elements and k is the number of buckets.
+                If the buckets are chosen well, the time complexity can be improved.
 
-Create an array of empty buckets.
-Traverse through the input array and distribute elements into buckets.
-Sort each bucket, either using another sorting algorithm or recursively applying Bucket Sort.
-Concatenate all the sorted buckets to obtain the final sorted array.
-Java Code:*/
+Space Complexity: O(n) - Extra space is required to store the elements in the buckets.
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+Sample Input:
+[0.42, 0.32, 0.33, 0.52, 0.37, 0.47, 0.51]
+
+Sample Output:
+[0.32, 0.33, 0.37, 0.42, 0.47, 0.51, 0.52]
+*/
+
+import java.util.*;
 
 public class BucketSort {
     public static void bucketSort(double[] arr) {
-        int n = arr.length;
-        if (n <= 0) return;
-
-        // Create buckets
-        List<List<Double>> buckets = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            buckets.add(new ArrayList<>());
+        if (arr == null || arr.length <= 1) {
+            return;
         }
 
-        // Put elements into buckets
+        int n = arr.length;
+        @SuppressWarnings("unchecked")
+        List<Double>[] buckets = new ArrayList[n];
+
+        // Create and initialize buckets
+        for (int i = 0; i < n; i++) {
+            buckets[i] = new ArrayList<>();
+        }
+
+        // Place elements in buckets
         for (int i = 0; i < n; i++) {
             int bucketIndex = (int) (n * arr[i]);
-            buckets.get(bucketIndex).add(arr[i]);
+            buckets[bucketIndex].add(arr[i]);
         }
 
-        // Sort individual buckets (using a simple sorting algorithm here)
+        // Sort individual buckets using any sorting algorithm (e.g., insertion sort)
         for (int i = 0; i < n; i++) {
-            Collections.sort(buckets.get(i));
+            Collections.sort(buckets[i]);
         }
 
-        // Concatenate sorted buckets to form the final sorted array
+        // Concatenate sorted buckets to get the final sorted array
         int index = 0;
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < buckets.get(i).size(); j++) {
-                arr[index++] = buckets.get(i).get(j);
+            for (double value : buckets[i]) {
+                arr[index++] = value;
             }
         }
     }
 
     public static void main(String[] args) {
         double[] arr = {0.42, 0.32, 0.33, 0.52, 0.37, 0.47, 0.51};
-        System.out.println("Original Array:");
-        for (double num : arr) {
-            System.out.print(num + " ");
-        }
-
         bucketSort(arr);
 
-        System.out.println("\nSorted Array:");
-        for (double num : arr) {
-            System.out.print(num + " ");
-        }
+        System.out.println("Sorted Array: " + Arrays.toString(arr));
     }
 }
-/*Time Complexity Analysis:
-
-The time complexity of Bucket Sort depends on the distribution of input data and the sorting algorithm used within each bucket:
-
-Best-case time complexity: O(n + k), where n is the number of elements in the input array, and k is the number of buckets.
-Average-case time complexity: O(n^2/k + k), where k is the number of buckets, and n is the number of elements. The choice of k and the distribution of input data affect the performance.
-Worst-case time complexity: O(n^2), which occurs when all elements are placed in a single bucket, and that bucket is sorted using an inefficient sorting algorithm.
-Bucket Sort is efficient when the input data is uniformly distributed, and the number of buckets is chosen appropriately. It can be used as a general-purpose sorting algorithm when the conditions are favorable.*/
